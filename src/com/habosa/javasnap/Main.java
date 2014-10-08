@@ -13,6 +13,8 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		String user = pullUser();
 		String pass = pullPass();
+		//System.out.print(user);
+		//System.out.print(pass);
 		FileMaitenence testCleaner = new FileMaitenence("snaps//", 1);
 		SnapBot test = new SnapBot(user, pass);
 		while (true) {
