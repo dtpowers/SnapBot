@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class Main {
-	
+	//test
 
 	public static void main(String[] args) throws Exception {
 		while(true){
