@@ -45,7 +45,7 @@ public class SnapBot {
 	private static void respond(ArrayList<String> users) {
 
 		List<String> recipients = new ArrayList<String>();
-		String responseSnap = "snap/3.jpg";
+		String responseSnap;
 		Random rand = new Random();
 		int randomPhoto;
 		int numPhotos = getNumPhotos();
@@ -53,9 +53,12 @@ public class SnapBot {
 		for (int i = 0; i < users.size(); i++) {
 
 			randomPhoto = rand.nextInt(numPhotos) + 1;
-			try {
+			//check if file is jpg or mp4, send appropriate
+			File f = new File("snaps\\" + randomPhoto + ".jpg");
+			if(f.exists() && !f.isDirectory()) {
 				responseSnap = "snaps\\" + randomPhoto + ".jpg";
-			} catch (Exception e) {
+			}
+			else{
 				responseSnap = "snaps\\" + randomPhoto + ".mp4";
 			}
 			recipients.add(users.get(i));
