@@ -25,7 +25,13 @@ public class FileMaitenence {
 
 		if (directoryListing != null) {
 			for (File snap : directoryListing) {
+				
+				if(snap.getName().contains("jpg")){
 				snap.renameTo(new File(directory + count + ".jpg"));
+				}
+				else{
+					snap.renameTo(new File(directory + count + ".mp4"));
+				}
 				count++;
 			}
 		}
