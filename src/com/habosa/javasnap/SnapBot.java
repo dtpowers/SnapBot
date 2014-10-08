@@ -57,14 +57,19 @@ public class SnapBot {
 			File f = new File("snaps\\" + randomPhoto + ".jpg");
 			if(f.exists() && !f.isDirectory()) {
 				responseSnap = "snaps\\" + randomPhoto + ".jpg";
+				recipients.add(users.get(i));
+				File image = new File(responseSnap);
+				snapchat.sendSnap(image, recipients, false, false, 7);
+				recipients.remove(0);
 			}
 			else{
 				responseSnap = "snaps\\" + randomPhoto + ".mp4";
+				recipients.add(users.get(i));
+				File image = new File(responseSnap);
+				snapchat.sendSnap(image, recipients, true, false, 7);
+				recipients.remove(0);
 			}
-			recipients.add(users.get(i));
-			File image = new File(responseSnap);
-			snapchat.sendSnap(image, recipients, false, false, 7);
-			recipients.remove(0);
+			
 
 		}
 	}
