@@ -18,8 +18,9 @@ public class Main {
 		FileMaitenence testCleaner = new FileMaitenence("snaps//", 1);
 		SnapBot test = new SnapBot(user, pass);
 		while (true) {
-			testCleaner.cleanupFolder();
+			//testCleaner.cleanupFolder();
 			test.run();
+			//System.out.print("Done!");
 			Thread.sleep(1000 * 60 * 3);
 		}
 

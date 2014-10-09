@@ -24,7 +24,7 @@ public class SnapBot {
 		// get new snaps
 		if (snapchat != null) {
 			snapchat.refresh();
-			System.out.print("refreshed!");
+			System.out.print("refreshed!\n");
 		} else {
 			log();
 		}
@@ -39,7 +39,7 @@ public class SnapBot {
 		// respond to snaps
 		respond(users);
 		// delete snaps over 24 hours old
-		System.out.print("Done!");
+		System.out.print("Done!\n");
 	}
 
 	private static void respond(ArrayList<String> users) {

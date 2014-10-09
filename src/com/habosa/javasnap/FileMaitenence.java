@@ -19,23 +19,23 @@ public class FileMaitenence {
 	}
 
 	public void renameAll() {
+		// when renaming, if another file already has that name is doesnt work
 		File dir = new File(directory);
 		File[] directoryListing = dir.listFiles();
 		int count = 1;
-
 		if (directoryListing != null) {
 			for (File snap : directoryListing) {
-
 				if (snap.getName().contains("jpg")) {
 					snap.renameTo(new File(directory + count + ".jpg"));
+					count++;
 				} else {
 					snap.renameTo(new File(directory + count + ".mp4"));
+					count++;
 				}
-				count++;
 			}
 		}
 	}
-	
+
 	public void deleteOld() {
 		File dir = new File(directory);
 		File[] directoryListing = dir.listFiles();
@@ -43,7 +43,7 @@ public class FileMaitenence {
 			for (File snap : directoryListing) {
 				long diff = new Date().getTime() - snap.lastModified();
 				if (diff > daysOld * 24 * 60 * 60 * 1000) {
-					
+
 					snap.delete();
 				}
 			}
