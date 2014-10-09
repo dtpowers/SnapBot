@@ -35,7 +35,9 @@ public class FileMaitenence {
 			}
 		}
 	}
-
+	public void archive(File snap){
+		
+	}
 	public void deleteOld() {
 		File dir = new File(directory);
 		File[] directoryListing = dir.listFiles();
@@ -43,6 +45,7 @@ public class FileMaitenence {
 			for (File snap : directoryListing) {
 				long diff = new Date().getTime() - snap.lastModified();
 				if (diff > daysOld * 24 * 60 * 60 * 1000) {
+					archive(snap);
 					snap.delete();
 				}
 			}
