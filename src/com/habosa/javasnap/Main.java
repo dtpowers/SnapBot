@@ -20,7 +20,7 @@ public class Main {
 		while (true) {
 			testCleaner.cleanupFolder();
 			test.run();
-			Thread.sleep(1000 * 60 * 1);
+			Thread.sleep(1000 * 60 * 3);
 		}
 
 	}
