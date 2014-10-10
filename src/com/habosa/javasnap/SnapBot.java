@@ -42,6 +42,30 @@ public class SnapBot {
 		System.out.print("Done!\n");
 	}
 
+	private static void respondNew(ArrayList<String> users) {
+		List<String> recipients = new ArrayList<String>();
+		String responseSnap;
+		Random rand = new Random();
+		int randomPhoto;
+		File file = new File("snaps");
+		File tempPhoto;
+		File[] photos = file.listFiles();
+		for (int i = 0; i < users.size(); i++) {
+			tempPhoto = photos[rand.nextInt(photos.length)];
+			recipients.add(users.get(i));
+			if (tempPhoto.getName().contains("jpg")) {
+				snapchat.sendSnap(tempPhoto, recipients, false, false, 7);
+				recipients.remove(0);
+
+			} else {
+				snapchat.sendSnap(tempPhoto, recipients, true, false, 7);
+				recipients.remove(0);
+			}
+
+		}
+
+	}
+
 	private static void respond(ArrayList<String> users) {
 
 		List<String> recipients = new ArrayList<String>();
@@ -53,23 +77,21 @@ public class SnapBot {
 		for (int i = 0; i < users.size(); i++) {
 
 			randomPhoto = rand.nextInt(numPhotos) + 1;
-			//check if file is jpg or mp4, send appropriate
+			// check if file is jpg or mp4, send appropriate
 			File f = new File("snaps\\" + randomPhoto + ".jpg");
-			if(f.exists() && !f.isDirectory()) {
+			if (f.exists() && !f.isDirectory()) {
 				responseSnap = "snaps\\" + randomPhoto + ".jpg";
 				recipients.add(users.get(i));
 				File image = new File(responseSnap);
 				snapchat.sendSnap(image, recipients, false, false, 7);
 				recipients.remove(0);
-			}
-			else{
+			} else {
 				responseSnap = "snaps\\" + randomPhoto + ".mp4";
 				recipients.add(users.get(i));
 				File image = new File(responseSnap);
 				snapchat.sendSnap(image, recipients, true, false, 7);
 				recipients.remove(0);
 			}
-			
 
 		}
 	}
