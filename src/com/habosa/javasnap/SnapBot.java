@@ -42,11 +42,11 @@ public class SnapBot {
 		System.out.print("Done!\n");
 	}
 
-	private static void respondNew(ArrayList<String> users) {
+	private static void respond(ArrayList<String> users) {
 		List<String> recipients = new ArrayList<String>();
-		String responseSnap;
+		
 		Random rand = new Random();
-		int randomPhoto;
+		
 		File file = new File("snaps");
 		File tempPhoto;
 		File[] photos = file.listFiles();
@@ -66,7 +66,7 @@ public class SnapBot {
 
 	}
 
-	private static void respond(ArrayList<String> users) {
+	private static void respondold(ArrayList<String> users) {
 
 		List<String> recipients = new ArrayList<String>();
 		String responseSnap;
