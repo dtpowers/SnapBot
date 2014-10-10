@@ -24,15 +24,17 @@ public class FileMaitenence {
 		File[] directoryListing = dir.listFiles();
 		int count = 1;
 		if (directoryListing != null) {
+			//give temporary names
 			for (File snap : directoryListing) {
 				if (snap.getName().contains("jpg")) {
-					snap.renameTo(new File(directory + count + ".jpg"));
+					snap.renameTo(new File(directory + "temp" + count + ".jpg"));
 					count++;
 				} else {
-					snap.renameTo(new File(directory + count + ".mp4"));
+					snap.renameTo(new File(directory + "temp" + count + ".mp4"));
 					count++;
 				}
 			}
+
 		}
 	}
 

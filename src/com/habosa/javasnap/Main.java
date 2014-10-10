@@ -23,7 +23,6 @@ public class Main {
 			//System.out.print("Done!");
 			Thread.sleep(1000 * 60 * 3);
 		}
-
 	}
 
 	public static String pullPass() throws IOException {
