@@ -21,7 +21,7 @@ public class Main {
 			//testCleaner.cleanupFolder();
 			test.run();
 			//System.out.print("Done!");
-			Thread.sleep(1000 * 60 * 3);
+			Thread.sleep(1000 * 60 * 10);
 		}
 	}
 
