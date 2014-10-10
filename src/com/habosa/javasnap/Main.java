@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class Main {
-	// test
+	
 
 	public static void main(String[] args) throws Exception {
 		String user = pullUser();
@@ -18,9 +18,9 @@ public class Main {
 		FileMaitenence testCleaner = new FileMaitenence("snaps//", 1);
 		SnapBot test = new SnapBot(user, pass);
 		while (true) {
-			//testCleaner.cleanupFolder();
+			testCleaner.cleanupFolder();
 			test.run();
-			//System.out.print("Done!");
+			
 			Thread.sleep(1000 * 60 * 10);
 		}
 	}

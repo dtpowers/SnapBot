@@ -102,6 +102,7 @@ public class SnapBot {
 
 	private static void storeSnaps(Snap[] snaps) throws Exception {
 		// see how many files exsist in directory currently
+		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 		int count = getNumPhotos();
 		for (int i = 0; i < snaps.length; i++) {
 			if (snaps[i].isDownloadable()) {
@@ -111,7 +112,7 @@ public class SnapBot {
 					extension = ".mp4";
 				}
 				byte[] snapBytes = snapchat.getSnap(snaps[i]);
-				File snapFile = new File("snaps\\" + count + extension);
+				File snapFile = new File("snaps\\" + timeStamp + count + extension);
 				FileOutputStream snapOs = new FileOutputStream(snapFile);
 				snapOs.write(snapBytes);
 				snapOs.close();

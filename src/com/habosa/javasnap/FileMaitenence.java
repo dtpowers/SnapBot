@@ -14,29 +14,11 @@ public class FileMaitenence {
 
 	public void cleanupFolder() {
 		this.deleteOld();
-		this.renameAll();
+		
 
 	}
 
-	public void renameAll() {
-		// when renaming, if another file already has that name is doesnt work
-		File dir = new File(directory);
-		File[] directoryListing = dir.listFiles();
-		int count = 1;
-		if (directoryListing != null) {
-			//give temporary names
-			for (File snap : directoryListing) {
-				if (snap.getName().contains("jpg")) {
-					snap.renameTo(new File(directory + "temp" + count + ".jpg"));
-					count++;
-				} else {
-					snap.renameTo(new File(directory + "temp" + count + ".mp4"));
-					count++;
-				}
-			}
-
-		}
-	}
+	
 
 	public void deleteOld() {
 		File dir = new File(directory);
