@@ -44,9 +44,7 @@ public class SnapBot {
 
 	private static void respond(ArrayList<String> users) {
 		List<String> recipients = new ArrayList<String>();
-		
 		Random rand = new Random();
-		
 		File file = new File("snaps");
 		File tempPhoto;
 		File[] photos = file.listFiles();
